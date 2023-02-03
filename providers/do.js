@@ -31,9 +31,6 @@ class DOProvider {
     // Get a list of sizes
   }
 
-  async listDroplets() {
-    // Get a list of droplets
-  }
 
   async create() {
     // Create a droplet
