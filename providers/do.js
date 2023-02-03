@@ -19,7 +19,7 @@ class DOProvider {
       return response.data.regions; 
     }
     catch (error) {
-      console.log(error.message);
+      console.log('Failed to get regions', error.message);
     }
   }
 
