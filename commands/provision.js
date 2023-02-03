@@ -49,13 +49,18 @@ exports.handler = async argv => {
             throw new Error(`The provider ${provider} is not supported yet.`);
         }
 
+        // TODO 5: create a new VM using the DigitalOcean provider, and give it a name, region, size, and image
         const doProvider = new DOProvider({ token: process.env.DO_TOKEN });
         console.log('Provisioning...');
-        doProvider.create({ name, region, size, image });
+        doProvider.create({
+            'name': name,
+            'region': region,
+            'size': size,
+            'image': image
+        });
 
-        console.log('Waiting for SSH...');
-        const sshInfo = await doProvider.getSSHInfo();
-        console.log(`SSH info: ${sshInfo}`);
+        // TODO 6: next wait for the VM to be ready and then get and print its IP address
+    
         
         console.log('Done!');
     } catch (error) {
