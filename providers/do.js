@@ -41,7 +41,7 @@ class DOProvider {
     // Print IP for SSH
   }
 
-  async destroy() {
+  async delete() {
     // Destroy a droplet
   }
 
