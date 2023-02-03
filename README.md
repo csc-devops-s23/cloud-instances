@@ -13,6 +13,13 @@ Install the dependencies:
 $ npm install
 ```
 
+Create a `.env` file in the root directory of this repo, and add yout DO_TOKEN in it like this:
+
+```bash
+DO_TOKEN=your_token
+```
+
+
 Run the app:
 
 ```bash

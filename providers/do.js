@@ -1,5 +1,6 @@
 const endpoint = 'https://api.digitalocean.com/v2';
 const axios = require('axios');
+require('dotenv').config()
 
 class DOProvider {
   constructor(config={token, }) {
