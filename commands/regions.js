@@ -23,7 +23,7 @@ exports.handler = async argv => {
         }
         const doProvider = new DOProvider({ token: process.env.DO_TOKEN });
         console.log('Listing regions...');
-        console.table(await doProvider.listRegions());
+        console.log(await doProvider.listRegions());
     } catch (error) {
         console.log(error.message);
     }
