@@ -52,12 +52,15 @@ exports.handler = async argv => {
         // TODO 5: create a new VM using the DigitalOcean provider, and give it a name, region, size, and image
         const doProvider = new DOProvider({ token: process.env.DO_TOKEN });
         console.log('Provisioning...');
-        doProvider.create({
+        const dropletId = await doProvider.create({
             'name': name,
             'region': region,
             'size': size,
             'image': image
         });
+
+        const dropletInfo = await doProvider.getSSHInfo(dropletId);
+        console.log('dropletInfo', dropletInfo);
 
         // TODO 6: next wait for the VM to be ready and then get and print its IP address
     
